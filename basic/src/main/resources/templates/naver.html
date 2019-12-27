@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" id="translate">
+	<button>번역</button>
+	<hr>
+	
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	
+	<script>
+	$('button').click(function() {		// 버튼을 클릭 하면 
+		$.ajax({
+			url : '/getNaver',
+			type : 'get',
+			data : {'translate':$('#translate').val()},
+			success : function(res) {	//res는 json
+					var message = res.message;
+					var result = message.result;
+					var translatedText = result.translatedText;
+					var html = '<h1>' + translatedText + '</h1>'
+					$('hr').after(html);
+				}	
+			})
+		})	
+		
+
+	</script>
+	
+	
+	
+	
+	
+</body>
+</html>
