@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<style> p {font-size = 200px;}</style>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<br>
+	
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$.ajax({
+			url : '/Exam',
+			type : 'get',
+			success : function(res) {
+				var items = res.items;
+				
+				var one = items[0];
+				var title_1 = one.snippet.title;
+				var description_1 = one.snippet.description;
+				var width_1 = one.snippet.thumbnails.default.width;
+				var height_1 = one.snippet.thumbnails.default.height;
+				var comp_1 = "title: " + title_1 + ", description: " + description_1 + ", width: " + width_1 + ", height: " + height_1
+				
+				var two = items[1];
+				var title_2 = two.snippet.title;
+				var description_2 = two.snippet.description;
+				var width_2 = two.snippet.thumbnails.default.width;
+				var height_2 = two.snippet.thumbnails.default.height;
+				var comp_2 = "title: " + title_2 + ", description: " + description_2 + ", width: " + width_2 + ", height: " + height_2
+				
+				var three = items[2];
+				var title_3 = three.snippet.title;
+				var description_3 = three.snippet.description;
+				var width_3 = three.snippet.thumbnails.default.width;
+				var height_3 = three.snippet.thumbnails.default.height;
+				var comp_3 = "title: " + title_3 + ", description: " + description_3 + ", width: " + width_3 + ", height: " + height_3
+				
+				var four = items[3];
+				var title_4 = four.snippet.title;
+				var description_4 = four.snippet.description;
+				var width_4 = four.snippet.thumbnails.default.width;
+				var height_4 = four.snippet.thumbnails.default.height;
+				var comp_4 = "title: " + title_4 + ", description: " + description_4 + ", width: " + width_4 + ", height: " + height_4
+
+				var five = items[4];
+				var title_5 = five.snippet.title;
+				var description_5 = five.snippet.description;
+				var width_5 = five.snippet.thumbnails.default.width;
+				var height_5 = five.snippet.thumbnails.default.height;
+				var comp_5 = "title: " + title_5 + ", description: " + description_5 + ", width: " + width_5 + ", height: " + height_5
+
+				$('br').after('첫번째' + '<br>' + comp_1 + '<hr>' 
+							+ '두번째' + '<br>' + comp_2 + '<hr>' 
+							+ '세번째' + '<br>' + comp_3 + '<hr>' 
+							+ '네번째' + '<br>' + comp_4 + '<hr>' 
+							+ '다섯번째' + '<br>' + comp_5 + '<hr>' 
+				
+				);
+			}
+		})
+	</script>
+</body>
+</html>
