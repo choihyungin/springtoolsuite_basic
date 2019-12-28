@@ -18,6 +18,7 @@
 			type : 'get',
 			data : {'translate':$('#translate').val()},
 			success : function(res) {	//res는 json
+					console.log(res)
 					var message = res.message;
 					var result = message.result;
 					var translatedText = result.translatedText;
