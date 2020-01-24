@@ -24,7 +24,6 @@ public class RequestController {
 	
 	
 	@GetMapping("req/http")
-	@ResponseBody
 	public String http(HttpServletRequest request) {
 
 		String name = request.getParameter("name");
